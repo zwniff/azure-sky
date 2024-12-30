@@ -47,8 +47,12 @@ elif example_choice == 'Example 4':
     example = example_data.iloc[3]
 else:
     example = None
+    st.sidebar.title('Input Features')
 
-st.sidebar.title('Input Features')
+# Automatically open sidebar if 'Custom Input' is selected
+if example_choice == 'Custom Input':
+    st.sidebar.markdown("<script>document.querySelector('section[data-testid=\"stSidebar\"]').style.display = 'block';</script>", unsafe_allow_html=True)
+
 # If an example is selected, update the input fields
 if example is not None:
     pollutant_pm25 = st.sidebar.number_input('Pollutant_PM2.5_µg/m³', min_value=0.0, max_value=500.0, value=example['Pollutant_PM2.5_µg/m³'])
