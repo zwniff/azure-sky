@@ -69,10 +69,21 @@ pca_input_features = pca.transform(scaled_input_features)
 prediction = stacking_model.predict(pca_input_features)
 probability = stacking_model.predict_proba(pca_input_features)
 probability = pd.DataFrame(probability, columns=stacking_model.classes_)
+probability.index = ['probability']
+
+# AQI Categories' color codes
+color_codes = {
+    'Good': '#00e400', 
+    'Moderate': '#ff0', 
+    'Unhealthy for Sensitive Groups': '#ff7e00',
+    'Unhealthy': '#f00', 
+    'Very Unhealthy': '#99004c'
+}
 
 # Display the prediction
 st.title('Prediction')
-st.write('The predicted AQI category is: **{}**'.format(prediction[0]))
+predicted_category = prediction[0]
+st.markdown(f'The predicted AQI category is: <span style="color:{color_codes[predicted_category]};">**{predicted_category}**</span>', unsafe_allow_html=True)
 
 # Display the probability of each class
 st.title('Prediction Probability')
