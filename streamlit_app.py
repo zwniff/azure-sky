@@ -1,9 +1,10 @@
 import streamlit as st
 import pickle as pkl
+from wrapper_model import XGBWrapper, CTBWrapper
 
 # Load the model, pca and scaler
-with open('./models/stacked_model.pkl', 'rb') as file:
-    stacked_model = pkl.load(file)
+with open('./models/stacking_model.pkl', 'rb') as file:
+    stacking_model = pkl.load(file)
 
 with open('./models/pca.pkl', 'rb') as file:
     pca = pkl.load(file)
@@ -64,7 +65,7 @@ scaled_input_features = scaler.transform(input_features)
 pca_input_features = pca.transform(scaled_input_features)
 
 # Predict the AQI category
-prediction = stacked_model.predict(pca_input_features)
+prediction = stacking_model.predict(pca_input_features)
 
 # Display the prediction
 st.title('Prediction')
@@ -73,4 +74,4 @@ st.write('The predicted AQI category is:', prediction[0])
 # Display the probability of each class
 st.title('Prediction Probability')
 st.write('The probability of each class is:')
-st.write(stacked_model.predict_proba(pca_input_features)[0])
+st.write(stacking_model.predict_proba(pca_input_features)[0])
