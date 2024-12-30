@@ -74,7 +74,7 @@ probability.index = ['probability']
 # AQI Categories' color codes
 color_codes = {
     'Good': '#00e400', 
-    'Moderate': '#ff0', 
+    'Moderate': '#cccc00', 
     'Unhealthy for Sensitive Groups': '#ff7e00',
     'Unhealthy': '#f00', 
     'Very Unhealthy': '#99004c'
