@@ -89,3 +89,27 @@ st.markdown(f'The predicted AQI category is: <span style="color:{color_codes[pre
 st.title('Prediction Probability')
 st.write('The probability of each class is:')
 st.write(probability)
+
+example = pd.read_csv('./data/example_data.csv')
+
+# Display the example data with clickable buttons to fill the input features for each category example
+st.sidebar.title('Example Data')
+for i in range(len(example)):
+    if st.sidebar.button(f'Fill with example data {i+1}'):
+        st.sidebar.write(f'The input features are filled with the following example data {i+1}:')
+        st.sidebar.write(example.iloc[i])
+        pollutant_pm25 = example.iloc[i]['Pollutant_PM2.5_µg/m³']
+        pollutant_pm10 = example.iloc[i]['Pollutant_PM10_µg/m³']
+        pollutant_o3 = example.iloc[i]['Pollutant_O3_ppb']
+        pollutant_no2 = example.iloc[i]['Pollutant_NO2_ppb']
+        pollutant_co = example.iloc[i]['Pollutant_CO_ppm']
+        pollutant_so2 = example.iloc[i]['Pollutant_SO2_ppb']
+        urban_vegetation_area = example.iloc[i]['UrbanVegetationArea_m2']
+        humidity = example.iloc[i]['Humidity_%']
+        air_temperature = example.iloc[i]['AirTemperature_C']
+        annual_energy_savings = example.iloc[i]['AnnualEnergySavings_%']
+        population_density = example.iloc[i]['PopulationDensity_people/km²']
+        renewable_energy_percentage = example.iloc[i]['RenewableEnergyPercentage_%']
+        annual_energy_consumption = example.iloc[i]['AnnualEnergyConsumption_kWh']
+        green_space_index = example.iloc[i]['GreenSpaceIndex_%']
+        historic_pollutant_levels = example.iloc[i]['HistoricPollutantLevels']

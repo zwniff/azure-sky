@@ -1,0 +1,6 @@
+SensorID,SensorLocation,Pollutant_PM2.5_µg/m³,Pollutant_PM10_µg/m³,Pollutant_O3_ppb,Pollutant_NO2_ppb,Pollutant_CO_ppm,Pollutant_SO2_ppb,UrbanVegetationArea_m2,Humidity_%,AirTemperature_C,EnergySavingTechnology,AnnualEnergySavings_%,PopulationDensity_people/km²,RetrofitData,RenewableEnergyPercentage_%,AnnualEnergyConsumption_kWh,GreenSpaceIndex_%,HistoricPollutantLevels,Country,AQI_Category
+S003221,Rural,25.715,59.922,78.309,32.51,23.59,19.192,5389.38,55.5,26.3,Efficient HVAC,23.46,185.16,No,14.57,22640.26,35.49,230.15,China,Good
+S004386,Rural,11.735,191.706,42.238,65.415,4.465,13.308000000000002,8649.62,67.14,15.98,Efficient HVAC,14.81,155.53,Yes,3.75,13575.7,55.26,237.83,Tajikistan,Moderate
+S000200,Urban,161.97,35.01,174.78,16.28,6.06,17.77,725.15,69.87,23.73,Solar Panels,12.3,4605.06,No,24.1,18007.86,12.67,273.15,Armenia,Unhealthy for Sensitive Groups
+S002059,Urban,173.25,327.92,78.0,48.36,40.26,56.75,1595.97,48.99,28.69,,12.97,1220.91,No,26.36,15957.2,34.55,104.12,India,Unhealthy
+S005728,Urban,228.35,342.41,195.96,123.69,27.5,23.51,2407.61,47.05,-4.569999999999999,,7.24,2311.35,No,,13580.6,50.57,73.37,Vietnam,Very Unhealthy
