@@ -31,20 +31,24 @@ st.title('Predicting the AQI Category')
 
 st.write('This app predicts the AQI category based on the input features.')
 st.write('Please enter the input features in the sidebar to get the prediction or use these example data.')
+# Add radio buttons for example data and a button for custom input
+example_choice = st.radio(
+    'Choose an example or custom input:',
+    ('Example 1', 'Example 2', 'Example 3', 'Example 4', 'Example 5', 'Custom Input')
+)
 
-# Add buttons for example data
-if st.button('Use Example 1'):
+if example_choice == 'Example 1':
     example = example_data.iloc[0]
-if st.button('Use Example 2'):
+elif example_choice == 'Example 2':
     example = example_data.iloc[1]
-if st.button('Use Example 3'):
+elif example_choice == 'Example 3':
     example = example_data.iloc[2]
-if st.button('Use Example 4'):
+elif example_choice == 'Example 4':
     example = example_data.iloc[3]
-if st.button('Use Example 5'):
+elif example_choice == 'Example 5':
     example = example_data.iloc[4]
 else:
-    example = example_data.iloc[0]
+    example = None
 
 st.sidebar.title('Input Features')
 # If an example is selected, update the input fields
@@ -64,6 +68,22 @@ if example is not None:
     annual_energy_consumption = st.sidebar.number_input('AnnualEnergyConsumption_kWh', min_value=0.0, max_value=1000000.0, value=example['AnnualEnergyConsumption_kWh'])
     green_space_index = st.sidebar.number_input('GreenSpaceIndex_%', min_value=0.0, max_value=100.0, value=example['GreenSpaceIndex_%'])
     historic_pollutant_levels = st.sidebar.number_input('HistoricPollutantLevels', min_value=0.0, max_value=300.0, value=example['HistoricPollutantLevels'])
+else:
+    pollutant_pm25 = st.sidebar.number_input('Pollutant_PM2.5_µg/m³', min_value=0.0, max_value=500.0)
+    pollutant_pm10 = st.sidebar.number_input('Pollutant_PM10_µg/m³', min_value=0.0, max_value=500.0)
+    pollutant_o3 = st.sidebar.number_input('Pollutant_O3_ppb', min_value=0.0, max_value=500.0)
+    pollutant_no2 = st.sidebar.number_input('Pollutant_NO2_ppb', min_value=0.0, max_value=500.0)
+    pollutant_co = st.sidebar.number_input('Pollutant_CO_ppm', min_value=0.0, max_value=500.0)
+    pollutant_so2 = st.sidebar.number_input('Pollutant_SO2_ppb', min_value=0.0, max_value=500.0)
+    urban_vegetation_area = st.sidebar.number_input('UrbanVegetationArea_m2', min_value=0.0, max_value=50000.0)
+    humidity = st.sidebar.number_input('Humidity_%', min_value=0.0, max_value=100.0)
+    air_temperature = st.sidebar.number_input('AirTemperature_C', min_value=-50.0, max_value=50.0)
+    annual_energy_savings = st.sidebar.number_input('AnnualEnergySavings_%', min_value=0.0, max_value=100.0)
+    population_density = st.sidebar.number_input('PopulationDensity_people/km²', min_value=0.0, max_value=100000.0)
+    renewable_energy_percentage = st.sidebar.number_input('RenewableEnergyPercentage_%', min_value=0.0, max_value=100.0)
+    annual_energy_consumption = st.sidebar.number_input('AnnualEnergyConsumption_kWh', min_value=0.0, max_value=1000000.0)
+    green_space_index = st.sidebar.number_input('GreenSpaceIndex_%', min_value=0.0, max_value=100.0)
+    historic_pollutant_levels = st.sidebar.number_input('HistoricPollutantLevels', min_value=0.0, max_value=300.0)
 
 # Scale the input features
 input_features = [[pollutant_pm25, pollutant_pm10, pollutant_o3, pollutant_no2, pollutant_co, pollutant_so2,
