@@ -35,13 +35,13 @@ st.write('Please enter the input features in the sidebar to get the prediction o
 # Add buttons for example data
 if st.button('Use Example 1'):
     example = example_data.iloc[0]
-elif st.button('Use Example 2'):
+if st.button('Use Example 2'):
     example = example_data.iloc[1]
-elif st.button('Use Example 3'):
+if st.button('Use Example 3'):
     example = example_data.iloc[2]
-elif st.button('Use Example 4'):
+if st.button('Use Example 4'):
     example = example_data.iloc[3]
-elif st.button('Use Example 5'):
+if st.button('Use Example 5'):
     example = example_data.iloc[4]
 else:
     example = example_data.iloc[0]
