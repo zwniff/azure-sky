@@ -31,21 +31,20 @@ st.title('Predicting the AQI Category')
 
 st.write('This app predicts the AQI category based on the input features.')
 st.write('Please enter the input features in the sidebar to get the prediction or use these example data.')
-for i in range(len(example_data)):
-    st.button(f'Example {i+1}')
-    # Add buttons for example data
-    if st.button('Use Example 1'):
-        example = example_data.iloc[0]
-    elif st.button('Use Example 2'):
-        example = example_data.iloc[1]
-    elif st.button('Use Example 3'):
-        example = example_data.iloc[2]
-    elif st.button('Use Example 4'):
-        example = example_data.iloc[3]
-    elif st.button('Use Example 5'):
-        example = example_data.iloc[4]
-    else:
-        example = None
+
+# Add buttons for example data
+if st.button('Use Example 1'):
+    example = example_data.iloc[0]
+elif st.button('Use Example 2'):
+    example = example_data.iloc[1]
+elif st.button('Use Example 3'):
+    example = example_data.iloc[2]
+elif st.button('Use Example 4'):
+    example = example_data.iloc[3]
+elif st.button('Use Example 5'):
+    example = example_data.iloc[4]
+else:
+    example = None
 
     # If an example is selected, update the input fields
     if example is not None:
