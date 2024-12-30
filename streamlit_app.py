@@ -34,7 +34,7 @@ st.write('Please enter the input features in the sidebar to get the prediction o
 # Add radio buttons for example data and a button for custom input
 example_choice = st.radio(
     'Choose an example or custom input:',
-    ('Example 1', 'Example 2', 'Example 3', 'Example 4', 'Example 5', 'Custom Input')
+    ('Example 1', 'Example 2', 'Example 3', 'Example 4', 'Custom Input')
 )
 
 if example_choice == 'Example 1':
@@ -45,8 +45,6 @@ elif example_choice == 'Example 3':
     example = example_data.iloc[2]
 elif example_choice == 'Example 4':
     example = example_data.iloc[3]
-elif example_choice == 'Example 5':
-    example = example_data.iloc[4]
 else:
     example = None
 
