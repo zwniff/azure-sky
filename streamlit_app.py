@@ -55,7 +55,7 @@ for i in range(len(example_data)):
         pollutant_no2 = st.sidebar.number_input('Pollutant_NO2_ppb', min_value=0.0, max_value=500.0, value=example['Pollutant_NO2_ppb'])
         pollutant_co = st.sidebar.number_input('Pollutant_CO_ppm', min_value=0.0, max_value=500.0, value=example['Pollutant_CO_ppm'])
         pollutant_so2 = st.sidebar.number_input('Pollutant_SO2_ppb', min_value=0.0, max_value=500.0, value=example['Pollutant_SO2_ppb'])
-        urban_vegetation_area = st.sidebar.number_input('UrbanVegetationArea_m2', min_value=0.0, max_value=500.0, value=example['UrbanVegetationArea_m2'])
+        urban_vegetation_area = st.sidebar.number_input('UrbanVegetationArea_m2', min_value=0.0, max_value=50000.0, value=example['UrbanVegetationArea_m2'])
         humidity = st.sidebar.number_input('Humidity_%', min_value=0.0, max_value=100.0, value=example['Humidity_%'])
         air_temperature = st.sidebar.number_input('AirTemperature_C', min_value=-50.0, max_value=50.0, value=example['AirTemperature_C'])
         annual_energy_savings = st.sidebar.number_input('AnnualEnergySavings_%', min_value=0.0, max_value=100.0, value=example['AnnualEnergySavings_%'])
@@ -63,7 +63,7 @@ for i in range(len(example_data)):
         renewable_energy_percentage = st.sidebar.number_input('RenewableEnergyPercentage_%', min_value=0.0, max_value=100.0, value=example['RenewableEnergyPercentage_%'])
         annual_energy_consumption = st.sidebar.number_input('AnnualEnergyConsumption_kWh', min_value=0.0, max_value=1000000.0, value=example['AnnualEnergyConsumption_kWh'])
         green_space_index = st.sidebar.number_input('GreenSpaceIndex_%', min_value=0.0, max_value=100.0, value=example['GreenSpaceIndex_%'])
-        historic_pollutant_levels = st.sidebar.number_input('HistoricPollutantLevels', min_value=0.0, max_value=100.0, value=example['HistoricPollutantLevels'])
+        historic_pollutant_levels = st.sidebar.number_input('HistoricPollutantLevels', min_value=0.0, max_value=300.0, value=example['HistoricPollutantLevels'])
 # Input features
 st.sidebar.title('Input Features')
 
