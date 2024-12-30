@@ -1,12 +1,31 @@
 import streamlit as st
 import pickle as pkl
 
-# Load the model
-with open('model_components.pkl', 'rb') as file:
-    model_data = pkl.load(file)
-    stacked_model = model_data['stacked_model']
-    pca = model_data['pca']
-    scaler = model_data['scaler']
+# Load the model, pca and scaler
+with open('models/stacked_model.pkl', 'rb') as file:
+    stacked_model = pkl.load(file)
+
+with open('models/pca.pkl', 'rb') as file:
+    pca = pkl.load(file)
+
+with open('models/scaler.pkl', 'rb') as file:
+    scaler = pkl.load(file)
+
+# load base model
+with open('models/ctb_model.pkl', 'rb') as file:
+    ctb_model = pkl.load(file)
+
+with open('models/lgbm_model.pkl', 'rb') as file:
+    lgbm = pkl.load(file)
+
+with open('models/xgb_model.pkl', 'rb') as file:
+    xgb_model = pkl.load(file)
+
+with open('models/dc_model.pkl', 'rb') as file:
+    dc = pkl.load(file)
+
+with open('models/svm_model.pkl', 'rb') as file:
+    svm = pkl.load(file)
 
 # Create the UI
 st.title('Predicting the AQI Category')
